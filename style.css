@@ -1,0 +1,965 @@
+/* ROOT VARIABLES for easier theme management */
+:root {
+    /* Colors (Richer, deeper palette) */
+    --clr-dark-ink: hsl(220, 10%, 15%); /* Deep charcoal/near-black */
+    --clr-soft-white: hsl(0, 0%, 96%);   /* A very soft, warm off-white */
+    --clr-medium-gray: hsl(210, 5%, 45%); /* Muted, sophisticated gray for secondary text */
+    --clr-light-gray: hsl(210, 5%, 75%); /* Very light gray for subtle borders */
+    --clr-accent-gold: hsl(40, 60%, 40%); /* Rich, burnished gold */
+    --clr-accent-gold-hover: hsl(40, 60%, 25%); /* Darker for hover */
+    --clr-bright-white: hsl(0, 0%, 100%); /* Pure white (for contrasts) */
+    --clr-true-black: hsl(0, 0%, 0%);     /* Pure black (for backgrounds) */
+
+    /* Fonts (Cormorant Garamond for elegant headings, Roboto for clean body) */
+    --ff-heading-primary: 'Cormorant Garamond', serif;
+    --ff-body: 'Roboto', sans-serif;
+    --ff-secondary-heading: 'Roboto', sans-serif; /* Fallback or for other headings */
+}
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-body); /* Apply Roboto globally for base text */
+    line-height: 1.6; /* Improves readability */
+    color: var(--clr-dark-ink); /* Default text color */
+}
+
+/* Container 1 (Hero Section) */
+.container1 {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    padding: 0 10%;
+    background-image: url(images/desktop/image-hero.jpg);
+    background-position: center;
+    background-size: cover;
+    color: var(--clr-bright-white); /* Ensures text on hero image is white */
+}
+
+.container1 header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 0 0 0;
+}
+
+.container1 header .logo {
+    width: 150px;
+}
+
+.container1 header nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 25px; /* Increased spacing */
+    position: relative;
+}
+
+.container1 header nav ul li:last-child {
+    margin-right: 0; /* No margin on the last item */
+}
+
+.container1 header nav ul li:after {
+    width: 0;
+    height: 2px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    background: var(--clr-accent-gold); /* Accent color for underline */
+    transform: translateX(-50%);
+    transition: width 0.3s ease-out; /* Smoother transition */
+}
+
+.container1 header nav ul li:hover:after {
+    width: 40%;
+}
+
+.container1 header nav ul li a {
+    text-decoration: none;
+    font-size: 15px; /* Slightly increased for better readability */
+    color: var(--clr-bright-white);
+    font-family: var(--ff-body); /* Navigation uses clean body font */
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.container1 header .mobilenav {
+    display: none;
+}
+
+.container1 h1 {
+    margin-top: 140px;
+    width: 55%;
+    position: relative;
+    font-size: 58px; /* Slightly larger for impact */
+    line-height: 70px; /* Adjusted for better flow */
+    letter-spacing: 1.5px; /* Slightly reduced for cursive-like flow */
+    font-weight: 300; /* Lighter weight for an elegant feel with Cormorant Garamond */
+    font-style: italic; /* **Apply italic for the cursive feel** */
+    padding: 40px;
+    border: 1px solid var(--clr-bright-white);
+    color: var(--clr-bright-white);
+    font-family: var(--ff-heading-primary); /* Apply the primary heading font */
+}
+
+.container1 h1 .break {
+    display: none;
+}
+
+/*---*/
+
+/**Container2 (About Section) **/
+.container2 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: var(--clr-soft-white); /* Soft background */
+}
+
+.container2 .row {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.container2 .row .aboutimage {
+    flex-basis: 60%;
+    height: 100%;
+    background-image: url(images/desktop/image-interactive.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.container2 .row .aboutcontent {
+    flex-basis: 60%;
+    background: var(--clr-bright-white); /* Pure white content box */
+    padding: 6% 8%;
+    height: 100%;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    z-index: 2;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Slightly more prominent, premium shadow */
+}
+
+.container2 .row .aboutcontent h2 {
+    font-size: 42px; /* Slightly larger */
+    font-weight: 400; /* Good weight for readability */
+    color: var(--clr-dark-ink); /* Deep charcoal for headings */
+    margin-bottom: 20px; /* More spacing */
+    text-transform: uppercase;
+    font-family: var(--ff-secondary-heading); /* Use a clean sans-serif for this heading */
+    letter-spacing: 1px;
+}
+
+.container2 .row .aboutcontent p {
+    font-size: 16px;
+    font-weight: 300; /* Lighter weight for elegance */
+    color: var(--clr-medium-gray); /* Muted gray for body text */
+    font-family: var(--ff-body);
+}
+
+.container2 .row .aboutcontent p .break {
+    display: none;
+}
+
+/*---*/
+
+/**Container3 (Products Section) **/
+.container3 {
+    width: 100%;
+    position: relative;
+    padding: 8% 10%;
+    background-color: var(--clr-soft-white); /* Consistent soft background */
+}
+
+.container3 .products {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.container3 .link1 {
+    display: none;
+}
+
+.container3 .products .content h3 {
+    font-size: 40px; /* Larger for impact */
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: var(--ff-secondary-heading); /* Clean sans-serif for this heading */
+    color: var(--clr-dark-ink);
+}
+
+.container3 .products .link a {
+    padding: 8px 30px; /* More padding for a bolder button */
+    border: 1px solid var(--clr-medium-gray); /* Softer border color */
+    color: var(--clr-dark-ink);
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--ff-body);
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease; /* Smooth transition for overall button */
+}
+
+.container3 .products .link a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--clr-dark-ink); /* Dark fill on hover */
+    transition: width .4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* More dynamic transition */
+    z-index: -1;
+}
+
+.container3 .products .link a:hover:after {
+    width: 100%;
+}
+
+.container3 .products .link a:hover {
+    color: var(--clr-bright-white); /* White text on dark hover */
+    border-color: var(--clr-dark-ink); /* Border also turns dark */
+}
+
+.container3 .productscontent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: -25px;
+}
+
+.container3 .productscontent .feature {
+    flex-basis: 23%;
+    height: 450px;
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 4;
+    cursor: pointer;
+    margin: 13px 0;
+}
+
+/* Background image paths (no changes here, assuming they are correct) */
+.container3 .productscontent .feature1 { background-image: url(images/desktop/image-deep-earth.jpg); background-position: center; background-size: cover; }
+.container3 .productscontent .feature2 { background-image: url(images/desktop/image-night-arcade.jpg); background-position: center; background-size: cover; }
+.container3 .productscontent .feature3 { background-image: url(images/desktop/image-soccer-team.jpg); background-position: center; background-size: cover; }
+.container3 .productscontent .feature4 { background-image: url(images/desktop/image-grid.jpg); background-position: center; background-size: cover; }
+.container3 .productscontent .feature5 { background-image: url(images/desktop/image-from-above.jpg); background-position: center; background-size: cover; }
+.container3 .productscontent .feature6 { background-image: url(images/desktop/image-pocket-borealis.jpg); background-position: center; background-size: cover; }
+.container3 .productscontent .feature7 { background-image: url(images/desktop/image-curiosity.jpg); background-position: center; background-size: cover; }
+.container3 .productscontent .feature8 { background-image: url(images/desktop/image-fisheye.jpg); background-position: center; background-size: cover; }
+
+
+.container3 .productscontent .feature h2 {
+    font-size: 30px;
+    font-weight: 300; /* Lighter weight for elegance */
+    position: absolute;
+    bottom: 8%;
+    left: 8%;
+    text-transform: uppercase;
+    color: var(--clr-bright-white);
+    z-index: 30;
+    transition: color 0.4s ease-out;
+    font-family: var(--ff-secondary-heading); /* Clean sans-serif for product titles */
+    letter-spacing: 0.8px;
+}
+
+.container3 .productscontent .feature:hover h2 {
+    color: var(--clr-true-black); /* Pure black on hover overlay */
+}
+
+.container3 .productscontent .feature:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 0%, 100%, 0.82); /* Slightly less opaque overlay */
+    transform: scale(0);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* More dynamic transition */
+    z-index: 10;
+    transform-origin: center;
+}
+
+.container3 .productscontent .feature:hover:after {
+    transform: scale(1);
+}
+
+/*---*/
+
+/**Footer**/
+.footer {
+    margin-top: 50px;
+    width: 100%;
+    padding: 5% 10%;
+    background: var(--clr-true-black); /* Solid true black for footer */
+    position: relative;
+}
+
+.footer .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.footer .row .leftcol {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.footer .row .leftcol .logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.footer .row .leftcol nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 25px; /* Increased spacing */
+    position: relative;
+}
+
+.footer .row .leftcol nav ul li:last-child {
+    margin-right: 0;
+}
+
+.footer .row .leftcol nav ul li:after {
+    width: 0;
+    height: 1px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    background: var(--clr-accent-gold); /* Accent color for underline */
+    transform: translateX(-50%);
+    transition: width 0.3s ease-out;
+}
+
+.footer .row .leftcol nav ul li:hover:after {
+    width: 40%;
+}
+
+.footer .row .leftcol nav ul li a {
+    text-decoration: none;
+    font-size: 15px; /* Consistent size */
+    color: var(--clr-bright-white);
+    font-family: var(--ff-body); /* Consistent nav font */
+    font-weight: 300;
+}
+
+.footer .row .rightcol {
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+    position: relative;
+}
+
+.footer .row .rightcol .socialicons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    text-align: right;
+    position: relative;
+}
+
+.footer .row .rightcol .socialicons a {
+    position: relative;
+    text-decoration: none;
+    width: 20px; /* Slightly larger icons for better touch target/visuals */
+    margin-left: 20px; /* Increased spacing */
+}
+
+.footer .row .rightcol .socialicons a img {
+    width: 100%; /* Make image fill the anchor width */
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    filter: invert(100%); /* Ensure icons are white on black background */
+    transition: filter 0.3s ease; /* Smooth hover for icons */
+}
+
+.footer .row .rightcol .socialicons a:hover img {
+    /* This filter attempts to turn white icons into a gold color on hover */
+    filter: invert(70%) sepia(20%) saturate(2000%) hue-rotate(10deg) brightness(100%) contrast(100%);
+}
+
+
+.footer .row .rightcol .socialicons a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    bottom: -10px;
+    background: var(--clr-accent-gold); /* Accent gold underline on hover */
+    transform: translateX(-50%);
+    transition: width 0.3s ease-out;
+    z-index: 5;
+}
+
+.footer .row .rightcol .socialicons a:hover:after {
+    width: 100%;
+}
+
+.footer .row .rightcol p {
+    color: var(--clr-medium-gray); /* Muted gray for copyright */
+    font-size: 13px; /* Slightly larger for readability */
+    margin-top: 25px; /* More spacing */
+    font-family: var(--ff-body);
+    font-weight: 300;
+}
+
+.footer .attribution {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-size: 11px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer .attribution p {
+    color: var(--clr-medium-gray); /* Consistent muted gray for attribution text */
+    font-size: 13px;
+    font-family: var(--ff-body); /* Use body font for less formality */
+}
+
+.footer .attribution a {
+    color: var(--clr-accent-gold); /* Accent gold for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: var(--ff-body);
+    font-weight: 400;
+}
+
+.footer .attribution a:hover {
+    color: var(--clr-accent-gold-hover);
+}
+
+/*---*/
+
+/* Mobile menu */
+#mobile-menu {
+    display: none; /* Hidden by default for desktop */
+}
+
+/*---*/
+
+@media only screen and (max-width: 768px) {
+    .container1 {
+        background-image: url(images/mobile/image-hero.jpg);
+        padding: 5%;
+    }
+
+    .container1 header #mobilenav {
+        display: block; /* Show hamburger icon on mobile */
+        z-index: 40;
+        position: fixed;
+        right: 5%;
+        top: 5%;
+        cursor: pointer;
+        width: 40px; /* Slightly smaller icon */
+    }
+
+    .container1 header nav {
+        display: none; /* Hide desktop nav on mobile */
+    }
+
+    .container1 header .logo {
+        width: 180px; /* Adjusted for better mobile scaling */
+    }
+
+    .container1 header {
+        padding: 30px 0 0 0;
+    }
+
+    .container1 h1 {
+        margin-top: 30%; /* Adjusted for mobile */
+        width: 100%;
+        font-size: 50px; /* Adjusted for mobile view */
+        line-height: 60px;
+        letter-spacing: 1px;
+        font-weight: 300;
+        padding: 5%;
+        font-style: italic; /* Keep italic for mobile heading */
+    }
+
+    .container1 h1 .break {
+        display: block;
+    }
+
+    /*---*/
+    
+    .container2 {
+        padding: 13% 5%;
+        justify-content: center;
+        height: auto; /* Ensure it wraps content on mobile */
+    }
+
+    .container2 .row {
+        height: auto;
+    }
+
+    .container2 .row .aboutimage {
+        flex-basis: 100%;
+        height: 50vh; /* Use viewport height for better responsiveness */
+        background-image: url(images/mobile/image-interactive.jpg); /* Use mobile image for mobile views */
+    }
+
+    .container2 .row .aboutcontent {
+        flex-basis: 100%;
+        padding: 7% 5%;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: auto;
+        height: auto;
+        text-align: center;
+        box-shadow: none;
+        margin-top: -80px;
+    }
+
+    .container2 .row .aboutcontent h2 {
+        font-size: 38px;
+        font-weight: 400;
+        color: var(--clr-dark-ink);
+        margin-bottom: 15px;
+    }
+
+    .container2 .row .aboutcontent p {
+        font-size: 16px;
+        font-weight: 300;
+        color: var(--clr-medium-gray);
+    }
+
+    .container2 .row .aboutcontent p .break1 {
+        display: none;
+    }
+
+    /*---*/
+
+    /* Container 3 */
+    .container3 {
+        padding-bottom: 100px; /* More space at the bottom */
+    }
+
+    .container3 .products {
+        margin-bottom: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container3 .products .content h3 {
+        font-size: 32px;
+        margin-left: 0;
+        margin-bottom: 20px;
+        margin-top: 50px;
+    }
+
+    .container3 .products .link {
+        display: none;
+    }
+
+    .container3 .link1 {
+        display: block; /* Show mobile "See All" button */
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        margin-top: 30px;
+    }
+
+    .container3 .link1 a {
+        padding: 10px 40px; /* Larger mobile button */
+        border: 1px solid var(--clr-medium-gray);
+        color: var(--clr-dark-ink);
+        font-size: 16px; /* Larger text */
+        font-weight: 400;
+    }
+
+    .container3 .productscontent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .container3 .productscontent .feature {
+        flex-basis: 100%;
+        height: 160px; /* Adjusted height for mobile features */
+        margin-bottom: 20px;
+    }
+
+    .container3 .productscontent .feature h2 {
+        font-size: 28px;
+        bottom: 10%;
+        left: 6%;
+        font-weight: 300;
+    }
+
+    /* Mobile specific background images for features */
+    .container3 .productscontent .feature1 { background-image: url(images/mobile/image-deep-earth.jpg); }
+    .container3 .productscontent .feature2 { background-image: url(images/mobile/image-night-arcade.jpg); }
+    .container3 .productscontent .feature3 { background-image: url(images/mobile/image-soccer-team.jpg); }
+    .container3 .productscontent .feature4 { background-image: url(images/mobile/image-grid.jpg); }
+    .container3 .productscontent .feature5 { background-image: url(images/mobile/image-from-above.jpg); }
+    .container3 .productscontent .feature6 { background-image: url(images/mobile/image-pocket-borealis.jpg); }
+    .container3 .productscontent .feature7 { background-image: url(images/mobile/image-curiosity.jpg); }
+    .container3 .productscontent .feature8 { background-image: url(images/mobile/image-fisheye.jpg); }
+
+    /*---*/
+
+    /* Footer */
+    .footer {
+        margin-top: 80px;
+        padding: 5% 5%;
+    }
+
+    .footer .row {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer .row .leftcol {
+        flex-basis: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: nowrap;
+    }
+
+    .footer .row .leftcol .logo {
+        width: 130px;
+        margin: 10px auto 20px;
+    }
+
+    .footer .row .leftcol nav {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer .row .leftcol nav ul li {
+        display: block;
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+
+    .footer .row .leftcol nav ul li a {
+        font-size: 15px;
+    }
+
+    .footer .row .rightcol {
+        flex-basis: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: nowrap;
+    }
+
+    .footer .row .rightcol .socialicons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer .row .rightcol .socialicons a {
+        width: 20px;
+        margin: 0 10px;
+    }
+
+    .footer .row .rightcol .socialicons a img {
+        filter: invert(100%); /* Keep white on mobile */
+    }
+
+    .footer .row .rightcol .socialicons a:after {
+        bottom: -5px;
+    }
+
+    .footer .row .rightcol p {
+        font-size: 13px;
+        margin: 15px 0 30px;
+    }
+
+    .footer .attribution {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        margin-top: 20px;
+    }
+
+    .footer .attribution p {
+        font-size: 13px;
+    }
+
+    /*---*/
+
+    /* Mobile menu */
+    #mobile-menu {
+        width: 100vw; /* Ensure it covers full viewport width */
+        height: 100vh;
+        position: fixed;
+        background: var(--clr-true-black);
+        padding: 5%;
+        display: block; /* Always block on mobile, JS controls visibility */
+        top: 0;
+        right: -100vw; /* Hidden off-screen by default (full width) */
+        z-index: 20;
+        transition: right 0.4s ease-in-out; /* Smooth transition */
+    }
+
+    #mobile-menu.open { /* Class to toggle with JS */
+        right: 0;
+    }
+
+    #mobile-menu .logo {
+        width: 150px; /* Adjusted */
+        margin-top: 20px;
+    }
+
+    #mobile-menu nav {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+    }
+
+    #mobile-menu nav ul li {
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    #mobile-menu nav ul li a {
+        text-decoration: none;
+        color: var(--clr-bright-white);
+        font-size: 32px; /* Adjusted */
+        font-weight: 400;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-family: var(--ff-heading-primary); /* Use primary heading font here */
+        font-style: italic; /* Give mobile menu items a cursive feel */
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .container1 h1 {
+        font-size: 42px;
+        line-height: 52px;
+        padding: 5%;
+        margin-top: 40%;
+    }
+
+    .container1 header .logo {
+        width: 110px;
+    }
+
+    .container1 header #mobilenav {
+        width: 30px;
+        top: 7%;
+    }
+
+    /*---*/
+
+    .container2 {
+        padding: 15% 30px 10%;
+    }
+
+    .container2 .row .aboutimage {
+        height: 30vh;
+    }
+
+    .container2 .row .aboutcontent {
+        padding: 5% 6%;
+        margin-top: -60px;
+    }
+
+    .container2 .row .aboutcontent h2 {
+        font-size: 30px;
+    }
+
+    .container2 .row .aboutcontent p {
+        font-size: 15px;
+    }
+
+    /*---*/
+
+    .container3 .products .content h3 {
+        font-size: 28px;
+        margin-top: 30px;
+    }
+
+    .container3 .productscontent .feature h2 {
+        font-size: 25px;
+    }
+
+    /*---*/
+
+    /* Footer */
+    .footer .row .leftcol nav ul li a {
+        font-size: 13px;
+    }
+
+    .footer .row .rightcol {
+        flex-basis: 100%;
+    }
+
+    /*---*/
+
+    #mobile-menu .logo {
+        width: 130px;
+        margin-top: 35px;
+    }
+
+    #mobile-menu nav ul li a {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .container1 h1 {
+        font-size: 36px;
+        line-height: 44px;
+        padding: 5%;
+    }
+
+    .container1 header .logo {
+        width: 100px;
+    }
+
+    .container1 header #mobilenav {
+        width: 25px;
+        top: 7%;
+    }
+
+    /*---*/
+
+    .container2 .row .aboutimage {
+        height: 25vh;
+    }
+
+    .container2 .row .aboutcontent h2 {
+        font-size: 26px;
+    }
+
+    .container2 .row .aboutcontent p {
+        font-size: 14px;
+    }
+
+    /*---*/
+
+    .container3 .products .content h3 {
+        font-size: 22px;
+        margin-bottom: 25px;
+        margin-top: 40px;
+    }
+
+    .container3 .productscontent .feature {
+        height: 140px;
+    }
+
+    .container3 .productscontent .feature h2 {
+        font-size: 22px;
+    }
+
+    /*---*/
+
+    .footer .row .leftcol nav ul li a {
+        font-size: 11px;
+    }
+
+    .footer .row .rightcol {
+        flex-basis: 100%;
+    }
+
+    /*---*/
+
+    #mobile-menu .logo {
+        width: 120px;
+        margin-top: 30px;
+    }
+
+    #mobile-menu nav ul li a {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .container1 h1 {
+        font-size: 30px;
+        line-height: 38px;
+        padding: 5%;
+    }
+
+    .container1 header #mobilenav {
+        width: 20px;
+        top: 8%;
+    }
+
+    /*---*/
+
+    .container2 .row .aboutcontent h2 {
+        font-size: 22px;
+    }
+
+    .container2 .row .aboutcontent p {
+        font-size: 13px;
+    }
+
+    /*---*/
+
+    .container3 .products .content h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+
+    .container3 .productscontent .feature h2 {
+        font-size: 20px;
+    }
+
+    /*---*/
+
+    .footer .attribution p {
+        font-size: 10px;
+    }
+
+    #mobile-menu nav ul li a {
+        font-size: 22px;
+    }
+}
